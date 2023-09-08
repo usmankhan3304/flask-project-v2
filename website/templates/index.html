@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock title %}
+{% block body %}
+
+<div class="container">
+    <h1 align="center"> Notes</h1>
+    <ul class="list-group lsit-group-flush">
+        {% for note in user.notes  %}
+        <li class="list-group-item">{{note.data}}</li>
+        {% endfor %}
+      </ul>
+    <form method="post">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"> </label>
+          
+          <textarea name="note" class="form-control" id="" cols="30" rows="10"></textarea>
+          <br>
+                <div align="center">
+        <button type="submit" class="btn btn-primary center">Submit</button>
+    </div>
+      </form>
+</div>
+
+{% endblock body %}
+
+
+
